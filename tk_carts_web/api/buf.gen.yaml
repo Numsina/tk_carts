@@ -1,0 +1,14 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: "github.com/Numsina/tk_carts/tk_carts_web/api/carts/v1;pb"
+
+plugins:
+  - plugin: buf.build/protocolbuffers/go
+    out: ../pb/v1
+    opt: paths=source_relative
+
+  - plugin: buf.build/grpc/go:v1.2.0
+    out: ../pb/v1
+    opt: paths=source_relative
